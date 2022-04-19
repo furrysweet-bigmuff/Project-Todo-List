@@ -1,5 +1,9 @@
 import './style/main.sass'
-import cover from './assets/tess-cover.jpeg'
 import {buildTemplates} from './app/buildTemplates/buildTemplates.js'
+import {controller} from './app/appScripts/controller.js'
+import {setEventsOnInit} from './app/appScripts/events.js'
 
 buildTemplates()
+setEventsOnInit()
+
+const addTaskBtn = document.querySelector('.add-task');

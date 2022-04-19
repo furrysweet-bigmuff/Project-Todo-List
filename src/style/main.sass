@@ -144,6 +144,47 @@ section h1
 .task .fa-times
     font-size: 1.4rem
 
+.modal
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 300px
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: column
+    padding: 30px
+    font-size: 1.1rem
+    font-weight: 600
+    background-color: #ddd
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0)
+    opacity: 0
+    visibility: hidden
+    .title
+        margin-bottom: 15px
+        text-align: center
+    input
+        margin-bottom: 15px
+        padding: 5px
+        border: 0
+        display: block
+    button
+        padding: 5px 10px
+        width: 100%
+        background-color: #216aa4
+        color: #fff
+        outline: none
+        border: 0
+        cursor: pointer
+    .close
+        position: absolute
+        top: 5px
+        right: 5px
+        cursor: pointer
+    &.active
+        opacity: 1
+        visibility: visible
+
 @media (max-width: 900px)
     header .fa-bars
         visibility: visible

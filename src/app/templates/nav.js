@@ -14,7 +14,7 @@ export function nav() {
     mainMenu.appendChild(menuBtn('fa-inbox', 'Inbox', true));
     mainMenu.appendChild(menuBtn('fa-calendar-day', 'Today'));
     mainMenu.appendChild(menuBtn('fa-calendar-week', 'This week'));
-    projectsMenu.appendChild(projectsBtn('My Project'))
+    // projectsMenu.appendChild(projectsBtn('My Project'))
 
     nav.appendChild(mainMenu);
     nav.appendChild(title);
