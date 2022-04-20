@@ -21,6 +21,9 @@ export function modalTask() {
     inputTitle.setAttribute('placeholder', 'Enter task title');
     inputDescription.setAttribute('placeholder', 'Enter task description');
     inputDate.setAttribute('placeholder', 'Enter task due date');
+    inputTitle.setAttribute('id', 'taskTitle');
+    inputDescription.setAttribute('id', 'taskDescription');
+    inputDate.setAttribute('id', 'taskDate');
 
     iTimes.classList.add('fas', 'fa-times', 'close');
     iTimes.setAttribute('id', 'closeModalTask')

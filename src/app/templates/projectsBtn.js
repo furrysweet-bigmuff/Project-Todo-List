@@ -12,6 +12,6 @@ export function projectsBtn(prj, active) {
     rightDiv.appendChild(iTimes);
     btn.appendChild(leftDiv);
     btn.appendChild(rightDiv);
-    btn.setAttribute('data-id', prj.projectId)
+    btn.setAttribute('data-id', prj.id)
     return btn
 }

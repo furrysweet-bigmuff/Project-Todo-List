@@ -1,4 +1,4 @@
-export function task() {
+export function task(newTask) {
     const task = document.createElement('li');
     const leftDiv = document.createElement('div');
     const rightDiv = document.createElement('div');
@@ -27,9 +27,9 @@ export function task() {
     iTimes.classList.add('fas', 'fa-times');
     iEdit.classList.add('fas', 'fa-edit');
 
-    titleDiv.textContent = 'Task title';
-    descriptionDiv.textContent = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, illum. Quis, in eos. Voluptatibus veritatis inventore ipsa, non eveniet voluptatem!';
-    dateDiv.textContent = '14.02.2022';
+    titleDiv.textContent = newTask.title;
+    descriptionDiv.textContent = newTask.description;
+    dateDiv.textContent = newTask.date;
 
     textDiv.appendChild(titleDiv);
     textDiv.appendChild(descriptionDiv);

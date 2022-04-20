@@ -1,8 +1,10 @@
 import { controller } from './controller.js'
+// import { Project } from './project.js';
 import { openModalProject, closeModalProject, openModalTask, closeModalTask } from './modalEvents'
 
 function setRemoveProject(id) {
     if (id) {
+        console.log(id)
         document.querySelector('li[data-id="' + id + '"] .remove').addEventListener('click', controller.removeProject)
     } else {
         let removeProjectBtn = document.querySelectorAll('#projects-menu .remove');
@@ -50,12 +52,18 @@ function setCloseTaskModal() {
     closeTaskModalBtn.addEventListener('click', closeModalTask);
 }
 
+function setAddTaskBtn() {
+    const addProjectModalBtn = document.getElementById('addTask');
+    addProjectModalBtn.addEventListener('click', controller.addTask);
+}
+
 function setEventsOnInit() {
     setOpenModalProject()
     setCloseModalProject()
     setOpenTaskModal()
     setCloseTaskModal()
     setAddProjectBtn()
+    setAddTaskBtn()
     checkLocalStorage()
 }
 

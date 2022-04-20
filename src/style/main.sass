@@ -97,9 +97,13 @@ section h1
     padding: 15px 10px
     border-radius: 5px
     cursor: pointer
-
-.add-task:hover
-    background-color: #ccc
+    opacity: 0
+    visibility: hidden
+    &.active
+        opacity: 1
+        visibility: visible
+    &:hover
+        background-color: #ccc
 
 .tasks li
     margin-bottom: 5px
