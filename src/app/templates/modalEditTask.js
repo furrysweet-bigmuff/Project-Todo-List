@@ -1,4 +1,4 @@
-export function modalTask() {
+export function modalEditTask() {
     const modal = document.createElement('div');
     const title = document.createElement('div');
     const inputTitle = document.createElement('input');
@@ -9,10 +9,10 @@ export function modalTask() {
     const iTimes = document.createElement('i');
 
     modal.classList.add('modal');
-    modal.setAttribute('id', 'modalTask');
+    modal.setAttribute('id', 'modalEditTask');
 
     title.classList.add('title');
-    title.textContent = 'Add Task';
+    title.textContent = 'Edit Task';
 
     inputTitle.type = 'text';
     inputDescription.type = 'text';
@@ -21,15 +21,15 @@ export function modalTask() {
     inputTitle.setAttribute('placeholder', 'Enter task title');
     inputDescription.setAttribute('placeholder', 'Enter task description');
 
-    inputTitle.setAttribute('id', 'taskTitle');
-    inputDescription.setAttribute('id', 'taskDescription');
-    inputDate.setAttribute('id', 'taskDate');
+    inputTitle.setAttribute('id', 'editTaskTitle');
+    inputDescription.setAttribute('id', 'editTaskDescription');
+    inputDate.setAttribute('id', 'editTaskDate');
 
     iTimes.classList.add('fas', 'fa-times', 'close');
-    iTimes.setAttribute('id', 'closeModalTask')
+    iTimes.setAttribute('id', 'closeEditModalTask')
 
-    btn.textContent = 'Add'
-    btn.setAttribute('id', 'addTask')
+    btn.textContent = 'Edit'
+    btn.setAttribute('id', 'addEditTask')
 
     modal.appendChild(title);
     modal.appendChild(inputTitle);

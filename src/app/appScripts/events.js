@@ -1,6 +1,5 @@
 import { controller } from './controller.js'
-// import { Project } from './project.js';
-import { openModalProject, closeModalProject, openModalTask, closeModalTask } from './modalEvents'
+import { openModalProject, closeModalProject, openModalTask, closeModalTask, closeEditModalTask } from './modalEvents'
 
 function setRemoveProject(id) {
     if (id) {
@@ -57,6 +56,56 @@ function setAddTaskBtn() {
     addProjectModalBtn.addEventListener('click', controller.addTask);
 }
 
+function setEditTaskButtons(id) {
+    if (id) {
+        document.querySelector('li[task-id="' + id + '"] .fa-edit').addEventListener('click', controller.getEditTaskValues)
+    } else {
+        const editTaskBtn = document.querySelectorAll('.task .fa-edit');
+        editTaskBtn.forEach(btn => btn.addEventListener('click', controller.getEditTaskValues))
+    }
+}
+
+function setCloseEditModal() {
+    const closeTaskModalBtn = document.getElementById('closeEditModalTask');
+    closeTaskModalBtn.addEventListener('click', closeEditModalTask);
+}
+
+function setSaveEditTaskModal() {
+    const addEditTaskBtn = document.getElementById('addEditTask');
+    addEditTaskBtn.addEventListener('click', controller.saveEditTask);
+}
+
+function setRemoveTask(id) {
+    if (id) {
+        document.querySelector('li[task-id="' + id + '"] .fa-times').addEventListener('click', controller.removeTask)
+        document.querySelector('li[task-id="' + id + '"] .fa-circle').addEventListener('click', controller.removeTask)
+    } else {
+        const removeTaskBtn = document.querySelectorAll('.task .fa-times');
+        const removeTaskBtnCircle = document.querySelectorAll('.task .fa-circle');
+        removeTaskBtn.forEach(btn => btn.addEventListener('click', controller.removeTask))
+        removeTaskBtnCircle.forEach(btn => btn.addEventListener('click', controller.removeTask))
+    }
+}
+
+function toggleMobileMenu() {
+    const menu = document.querySelector('nav');
+    if ( menu.classList.contains('active') ) {
+        menu.classList.remove('active')
+    } else {
+        menu.classList.add('active')
+    }
+}
+
+function setToggleMobileMenu() {
+    const menuBtn = document.querySelector('.fa-bars');
+    menuBtn.addEventListener('click', toggleMobileMenu)
+}
+
+function setDateFilter() {
+    const btns = document.querySelectorAll('#main-menu li');
+    btns.forEach(btn => btn.addEventListener('click', controller.setDateFilter))
+}
+
 function setEventsOnInit() {
     setOpenModalProject()
     setCloseModalProject()
@@ -65,6 +114,11 @@ function setEventsOnInit() {
     setAddProjectBtn()
     setAddTaskBtn()
     checkLocalStorage()
+    setEditTaskButtons()
+    setCloseEditModal()
+    setSaveEditTaskModal()
+    setToggleMobileMenu()
+    setDateFilter()
 }
 
-export {setRemoveProject, setLoadProject, setEventsOnInit}
+export {setRemoveProject, setLoadProject, setEventsOnInit, setEditTaskButtons, setRemoveTask}

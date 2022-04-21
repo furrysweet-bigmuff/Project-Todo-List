@@ -1,3 +1,5 @@
+import {controller} from '../appScripts/controller.js'
+
 export function task(newTask) {
     const task = document.createElement('li');
     const leftDiv = document.createElement('div');
@@ -29,7 +31,10 @@ export function task(newTask) {
 
     titleDiv.textContent = newTask.title;
     descriptionDiv.textContent = newTask.description;
-    dateDiv.textContent = newTask.date;
+    dateDiv.textContent = controller.getDateFormatted(newTask.date)
+    // dateDiv.textContent = newTask.date;
+
+    task.setAttribute('task-id', newTask.id)
 
     textDiv.appendChild(titleDiv);
     textDiv.appendChild(descriptionDiv);

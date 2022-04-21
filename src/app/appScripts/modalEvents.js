@@ -19,4 +19,15 @@ const closeModalTask = () => {
     modalTask.classList.remove('active');
 }
 
-export {openModalProject, closeModalProject, openModalTask, closeModalTask}
+const openEditModalTask = () => {
+    const modalTask = document.getElementById('modalEditTask');
+    modalTask.classList.add('active');
+}
+const closeEditModalTask = () => {
+    const modalTask = document.getElementById('modalEditTask');
+    let inputs = document.querySelectorAll('#modalEditTask input');
+    inputs.forEach(input => input.value = '');
+    modalTask.classList.remove('active');
+}
+
+export {openModalProject, closeModalProject, openModalTask, closeModalTask, openEditModalTask, closeEditModalTask}

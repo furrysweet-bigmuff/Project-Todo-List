@@ -114,6 +114,7 @@ section h1
 
 .circle .fa-circle
     font-size: 1.5rem
+    cursor: pointer
 
 .task
     display: flex
@@ -147,6 +148,10 @@ section h1
 
 .task .fa-times
     font-size: 1.4rem
+    cursor: pointer
+
+.task .fa-edit
+    cursor: pointer
 
 .modal
     position: absolute
@@ -198,6 +203,11 @@ section h1
 
     main
         grid-template-columns: 1fr
+
+    nav
+        display: none
+        &.active
+            display: block
 
     section
         padding: 20px

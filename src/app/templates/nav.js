@@ -11,10 +11,8 @@ export function nav() {
     title.classList.add('title');
     title.textContent = 'Projects';
 
-    mainMenu.appendChild(menuBtn('fa-inbox', 'Inbox', true));
-    mainMenu.appendChild(menuBtn('fa-calendar-day', 'Today'));
-    mainMenu.appendChild(menuBtn('fa-calendar-week', 'This week'));
-    // projectsMenu.appendChild(projectsBtn('My Project'))
+    mainMenu.appendChild(menuBtn('fa-inbox', 'Inbox', 'inbox', true));
+    mainMenu.appendChild(menuBtn('fa-calendar-day', 'Today', 'today'));
 
     nav.appendChild(mainMenu);
     nav.appendChild(title);
